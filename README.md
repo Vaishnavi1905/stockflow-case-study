@@ -117,7 +117,7 @@ Tables:
 - Included supplier info for reordering  
 - Designed response to match required format
 
- ### Assumptions
+ ## Assumptions
 
 - Threshold is fixed (e.g., 20)
 - Recent sales means last 30 days
