@@ -1,4 +1,4 @@
-Inventory Management System for B2B SaaS
+##Inventory Management System for B2B SaaS
 Task 1: Code Review & Debugging 
 ## Issues:
 1.	No input validation:
