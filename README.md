@@ -20,26 +20,27 @@
     But requirement says multiple warehouse.
 
 ## Impacts:
-•	Application may crash if data is missing.
-•	Duplicate SKUs can create confusion.
-•	Data may become inconsistent (product without inventory).
-•	Wrong price can affect business calculations.
-•	System becomes unreliable without error handling.
-•	Not suitable for real-world scaling.
+-	Application may crash if data is missing.
+-	Duplicate SKUs can create confusion.
+-	Data may become inconsistent (product without inventory).
+-	The wrong price can affect business calculations.
+-	System becomes unreliable without error handling.
+-	Not suitable for real-world scaling.
 
 ## Fixes and Improvements
 I fixed these problems by:
-•	Checking required fields before using them
-•	Making sure SKU is unique
-•	Saving product and inventory together (single commit)
-•	Adding error handling to avoid crashes
-•	Handling optional fields safely
-•	Validating price and quantity
+-	Checking required fields before using them
+-	Making sure SKU is unique
+-	Saving product and inventory together (single commit)
+-	Adding error handling to avoid crashes
+-	Handling optional fields safely
+-	Validating price and quantity
 
 ## Assumptions
-  SKU must be unique
-  Price >= 0
-  Quantity optional
+-	 SKU must be unique
+-	Price >= 0
+-	Quantity optional
+
 
 
 ## Task 2: Database Design
