@@ -1,5 +1,6 @@
-##Inventory Management System for B2B SaaS
-Task 1: Code Review & Debugging 
+## Inventory Management System for B2B SaaS
+
+## Task 1: Code Review & Debugging 
 ## Issues:
 1.	No input validation:
     The code access field like data[‘name’] without checking .
@@ -41,7 +42,7 @@ I fixed these problems by:
   Quantity optional
 
 
-Task 2: Database Design
+## Task 2: Database Design
 
 ### 1. Schema Design
 
@@ -77,7 +78,7 @@ Tables:
 - Foreign keys used to maintain data consistency
 
 
-Task 3: Low Stock Alerts API
+## Task 3: Low Stock Alerts API
 
 ### 1. Implementation (Approach)
 
