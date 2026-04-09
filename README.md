@@ -41,7 +41,7 @@ I fixed these problems by:
 -	Price >= 0
 -	Quantity optional
 
-
+---
 
 
 ## Task 2: Database Design
@@ -79,6 +79,7 @@ Tables:
 - Product_Bundles used to support bundle products  
 - Foreign keys used to maintain data consistency
 
+---
 
 ## Task 3: Low Stock Alerts API
 
