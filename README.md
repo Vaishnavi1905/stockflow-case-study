@@ -2,21 +2,21 @@
 
 ## Task 1: Code Review & Debugging 
 ## Issues:
-1.	No input validation:
+- No input validation:
     The code access field like data[‘name’] without checking .
-2.	SKU is not checked for uniqueness :
+- SKU is not checked for uniqueness :
     SKU can be added many times.
-3.	Two database commits:
+- Two database commits:
     Product and inventory are saved separately.
-4.	No transaction handling:
+- No transaction handling:
     If any of the step fails then other still saves.
-5.	No error handling:
+- No error handling:
     System may crash if something goes wrong.
-6.	No validation for price and value:
+-  No validation for price and value:
     It can store negative and wrong values.
-7.	Optional fields not handled:
+-  Optional fields not handled:
     Initial_quantity may not be present.
-8.	Product linked to one warehouse:
+ -  roduct linked to one warehouse:
     But requirement says multiple warehouse.
 
 ## Impacts:
@@ -43,9 +43,10 @@ I fixed these problems by:
 
 
 
+
 ## Task 2: Database Design
 
-### 1. Schema Design
+## 1. Schema Design
 
 Tables:
 
@@ -60,7 +61,7 @@ Tables:
 
 
 
-### 2. Identify Gaps
+## 2. Identify Gaps
 
 - Is SKU unique globally or per company?
 - Can a product have multiple suppliers?
@@ -70,7 +71,7 @@ Tables:
 
 
 
-### 3. Explanation of Decisions
+##  3. Explanation of Decisions
 
 - Separate Inventory table to support multiple warehouses  
 - Inventory_History to track stock changes  
@@ -81,7 +82,7 @@ Tables:
 
 ## Task 3: Low Stock Alerts API
 
-### 1. Implementation (Approach)
+## 1. Implementation (Approach)
 
 - Get all warehouses for the given company_id  
 - For each warehouse, fetch inventory records  
@@ -94,7 +95,7 @@ Tables:
 - Return alerts list with total count  
 
 
-### 2. Edge Cases
+##  2. Edge Cases
 
 - Company has no warehouses  
 - Product has no supplier  
@@ -104,7 +105,7 @@ Tables:
 
 
 
-### 3. Explanation of Approach
+##  3. Explanation of Approach
 
 - Used warehouse → inventory → product flow to get data  
 - Applied business rules (low stock + recent sales)  
