@@ -18,6 +18,7 @@
     Initial_quantity may not be present.
  -  roduct linked to one warehouse:
     But requirement says multiple warehouse.
+    
 
 ## Impacts:
 -	Application may crash if data is missing.
@@ -35,7 +36,8 @@ I fixed these problems by:
 -	Adding error handling to avoid crashes
 -	Handling optional fields safely
 -	Validating price and quantity
-
+- Used transaction to ensure data consistency and avoid partial data saving
+  
 ## Assumptions
 -	 SKU must be unique
 -	Price >= 0
@@ -58,6 +60,7 @@ Tables:
 - Suppliers (id, name)
 - Supplier_Products (supplier_id, product_id)
 - Product_Bundles (bundle_product_id, child_product_id, quantity)
+- Product is linked to company for multi-tenant support
 
 
 
@@ -76,7 +79,8 @@ Tables:
 - Separate Inventory table to support multiple warehouses  
 - Inventory_History to track stock changes  
 - Many-to-many relationship handled using Supplier_Products  
-- Product_Bundles used to support bundle products  
+- Product_Bundles used to support bundle products
+- Product is linked to company to support multi-tenant system 
 - Foreign keys used to maintain data consistency
 
 ---
@@ -111,7 +115,14 @@ Tables:
 - Used warehouse → inventory → product flow to get data  
 - Applied business rules (low stock + recent sales)  
 - Included supplier info for reordering  
-- Designed response to match required format  
+- Designed response to match required format
+
+ ### Assumptions
+
+- Threshold is fixed (e.g., 20)
+- Recent sales means last 30 days
+- Each product has at least one supplier
+- Days until stockout is estimated
 
 
 
